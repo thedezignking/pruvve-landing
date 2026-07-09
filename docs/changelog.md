@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Ported the Figma design tokens into `styles/globals.css` — brand + neutral primitives, semantic text/background/stroke/status tokens, a `Web/*` type scale (`text-display`…`text-label`), named spacing/radius scales, and elevation shadows — with shadcn semantic tokens re-pointed to Pruvve values
+- Populated `docs/design-system.md` with real values (colors, typography, spacing, radius, shadows, component specs) replacing the placeholder tables
 - Skip-to-content link in the root layout, targeting `#main-content` for keyboard and screen-reader users
 - Global `prefers-reduced-motion` fallback in `styles/globals.css` that disables smooth scrolling and neutralizes CSS animations/transitions
 - `engines.node >= 20` in `package.json` to match the Node version documented in the README

@@ -2,7 +2,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* =============================================================================
+   Pruvve design tokens — ported from Figma (file g1Xffog35iBhLxnNDvMol7).
+   Layering: Primitives (raw scales) → Semantics → shadcn aliases → @theme.
+   Never hardcode raw values in components — reference these tokens.
+   Source of truth + rationale: docs/design-system.md.
+   ============================================================================= */
+
 @theme inline {
+  /* ---- Fonts (design uses SF Pro; Geist is the web substitute, see layout.tsx) ---- */
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* ---- shadcn semantic tokens (consumed by components/ui/*) ---- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -21,97 +34,197 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  /* ---- Brand scale (olive green) → bg-brand-600, text-brand-500, … ---- */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand: var(--primary-base);
 
-  --font-sans: var(--font-sans);
-  --font-display: var(--font-sans);
-  --font-mono: var(--font-mono);
+  /* ---- Semantic surfaces + text (ergonomic aliases) ---- */
+  --color-surface: var(--bg-surface);
+  --color-layer: var(--bg-layer);
+  --color-subtle: var(--bg-subtle);
+  --color-text-subtext: var(--text-subtext);
+  --color-text-soft: var(--text-soft);
+
+  /* ---- Status ---- */
+  --color-success: var(--success-base);
+  --color-warning: var(--warning-base);
+  --color-error: var(--error-base);
+  --color-info: var(--info-base);
+
+  /* ---- Radius scale (Figma: sm 12 → 3xl 48, full pill) ---- */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-3xl: 48px;
+  --radius-full: 999px;
+
+  /* ---- Spacing scale (Figma Spacing collection: XXS 2 → 7XL 48) ---- */
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 28px;
+  --spacing-4xl: 32px;
+  --spacing-5xl: 36px;
+  --spacing-6xl: 40px;
+  --spacing-7xl: 48px;
+
+  /* ---- Type scale (Web/* text styles). Weights live in design-system.md. ---- */
+  --text-display: 74px;
+  --text-display--line-height: 1.14;
+  --text-display--letter-spacing: -0.01em;
+  --text-h1: 54px;
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: 0.02em;
+  --text-h2: 32px;
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: 0.02em;
+  --text-h3: 28px;
+  --text-h3--line-height: 32px;
+  --text-h4: 20px;
+  --text-h4--line-height: 28px;
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 1.5;
+  --text-body-lg--letter-spacing: 0.02em;
+  --text-body: 16px;
+  --text-body--line-height: 1.5;
+  --text-body--letter-spacing: 0.02em;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--letter-spacing: 0.02em;
+  --text-label: 16px;
+  --text-label--line-height: 24px;
+
+  /* ---- Elevation (Figma effect styles) ---- */
+  --shadow-card: 0 10px 35px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 12px 87px rgba(0, 0, 0, 0.16);
+  --shadow-image: 0 10px 82px rgba(0, 0, 0, 0.14);
+  --shadow-ambient: 0 19px 78px rgba(0, 0, 0, 0.12);
+  --shadow-small: 0 4px 33px rgba(0, 0, 0, 0.12);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* ---- Primitives — Brand (olive green) ---- */
+  --brand-50: #f3f6e6;
+  --brand-100: #dbe3b1;
+  --brand-200: #cad58b;
+  --brand-300: #b1c255;
+  --brand-400: #a2b635;
+  --brand-500: #8ba402;
+  --brand-600: #7e9502;
+  --brand-700: #637401;
+  --brand-800: #4c5a01;
+  --brand-900: #3a4501;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* ---- Primitives — Neutral ---- */
+  --neutral-0: #ffffff;
+  --neutral-10: #fbfbfb;
+  --neutral-20: #f7f7f6;
+  --neutral-30: #f2f2ef;
+  --neutral-40: #e4e5e3;
+  --neutral-45: #d5d5d5;
+  --neutral-50: #cccdca;
+  --neutral-60: #c0c0bd;
+  --neutral-70: #b6b6b2;
+  --neutral-80: #a9aaa5;
+  --neutral-90: #9d9e98;
+  --neutral-100: #91928b;
+  --neutral-200: #85867f;
+  --neutral-300: #787a72;
+  --neutral-400: #6e7067;
+  --neutral-500: #62635a;
+  --neutral-600: #585950;
+  --neutral-700: #494b41;
+  --neutral-800: #3d3f34;
+  --neutral-900: #333529;
+
+  /* ---- Primitives — Status bases (full scales documented in design-system.md) ---- */
+  --red-500: #dc2626;
+  --green-600: #1cb061;
+  --orange-600: #e46917;
+  --blue-500: #335cff;
+
+  /* ---- Semantics — Primary (brand green) ---- */
+  --primary-base: #7e9502; /* brand-600 */
+  --primary-dark: #637401; /* brand-700 */
+  --primary-faint: #cad58b; /* brand-200 */
+  --primary-mute: #f3f6e6; /* brand-50 */
+
+  /* ---- Semantics — Text ---- */
+  --text-strong: #333529; /* neutral-900 */
+  --text-subtext: #787a72; /* neutral-300 */
+  --text-soft: #91928b; /* neutral-100 */
+  --text-disabled: #b6b6b2; /* neutral-70 */
+  --text-inverse: #ffffff; /* neutral-0 */
+  --text-accent: #7e9502; /* brand-600 */
+
+  /* ---- Semantics — Background ---- */
+  --bg-default: #ffffff; /* neutral-0 */
+  --bg-surface: #f7f7f6; /* neutral-20 */
+  --bg-layer: #f2f2ef; /* neutral-30 */
+  --bg-subtle: #e4e5e3; /* neutral-40 */
+  --bg-muted: #cccdca; /* neutral-50 */
+  --bg-weak: #3d3f34; /* neutral-800 */
+
+  /* ---- Semantics — Stroke (opacity-based) ---- */
+  --stroke-soft: rgba(0, 0, 0, 0.05);
+  --stroke-mild: rgba(0, 0, 0, 0.1);
+  --stroke-strong: rgba(0, 0, 0, 0.2);
+
+  /* ---- Semantics — Status ---- */
+  --success-base: #1cb061;
+  --success-dark: #0d512d;
+  --success-faint: #98e2bb;
+  --success-mute: #dcfce7;
+  --warning-base: #e46917;
+  --warning-dark: #69300b;
+  --warning-faint: #fdbf95;
+  --warning-mute: #ffe2cf;
+  --error-base: #dc2626;
+  --error-dark: #5c1010;
+  --error-faint: #ef9b9b;
+  --error-mute: #f8d6d6;
+  --info-base: #335cff;
+  --info-dark: #15276b;
+  --info-faint: #a1b4ff;
+  --info-mute: #ebefff;
+
+  /* ---- shadcn semantic aliases → Pruvve semantics ----
+     Note: the design's primary ACTION button is the dark neutral (#333529),
+     so --primary maps to text-strong. The brand green is --brand / bg-brand-600. */
+  --background: var(--bg-default);
+  --foreground: var(--text-strong);
+  --card: var(--bg-default);
+  --card-foreground: var(--text-strong);
+  --popover: var(--bg-default);
+  --popover-foreground: var(--text-strong);
+  --primary: var(--text-strong);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--bg-surface);
+  --secondary-foreground: var(--text-strong);
+  --muted: var(--bg-layer);
+  --muted-foreground: var(--text-subtext);
+  --accent: var(--primary-mute);
+  --accent-foreground: var(--primary-dark);
+  --destructive: var(--error-base);
+  --border: var(--bg-subtle);
+  --input: var(--bg-subtle);
+  --ring: var(--primary-base);
 }
 
 @layer base {
