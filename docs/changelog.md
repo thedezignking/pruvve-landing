@@ -10,6 +10,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Hero section (`components/sections/hero-section.tsx`) implemented from the Figma Hero frame: gradient card, nav, display headline with brand accent, CTA, phone mockup with floating category/product cards; exact desktop geometry with mobile-first responsive behavior
+- Figma nav implemented in `components/layout/header.tsx` (logo, anchor links, Download App pill); links collapse below `md`
+- Button `xl` and `2xl` pill sizes (CVA variants) matching the Figma nav and hero CTA buttons
+- `navLinks` constant in `lib/constants.ts`; hero image assets exported from Figma into `public/images/pruvve-images/hero/`
+- Mobile hamburger menu (`components/layout/mobile-nav.tsx`, client island) with accessible toggle, Escape-to-close, and in-menu Download App button
+
+### Changed
+
+- Synced design update from Figma: feature-card headings moved from 28/20 to Medium 24/32 — added `Web/Card Title` text style in Figma (applied to all 4 cards, bodies bound to `Web/Body`) and `text-card-title` token in `globals.css`
+- Nav top padding updated to 12px (Figma change); nav→headline gap adjusted to 140px at desktop to keep the headline at y=208
+
+### Fixed
+
+- Nav no longer overflows the hero card on tablet (was causing a horizontal scrollbar): logo, links, and buttons scale down below `lg` and return to exact Figma sizes at `lg`
+- Nav → headline spacing now steps 64/80/120px (mobile/tablet/desktop) instead of a cramped 40px below desktop
+- Hamburger upgraded to a standard firm control: 44px touch target, 24px icon, 2.25 stroke
+- Header logo now uses the brand wordmark asset (`pruvve-logo.png`) at 20px/24px heights instead of rendered text
+- Hero card now fills the viewport width on large screens instead of capping at 1436px
+- Cropped the baked gradient background out of `card-product.png`; corners and shadow now come from CSS tokens so the card sits cleanly over the phone
 - Ported the Figma design tokens into `styles/globals.css` — brand + neutral primitives, semantic text/background/stroke/status tokens, a `Web/*` type scale (`text-display`…`text-label`), named spacing/radius scales, and elevation shadows — with shadcn semantic tokens re-pointed to Pruvve values
 - Populated `docs/design-system.md` with real values (colors, typography, spacing, radius, shadows, component specs) replacing the placeholder tables
 - Skip-to-content link in the root layout, targeting `#main-content` for keyboard and screen-reader users

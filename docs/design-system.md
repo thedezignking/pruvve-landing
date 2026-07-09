@@ -120,6 +120,7 @@ Utilities: `text-success`, `bg-error`, etc. (base). Full 50–900 ramps exist in
 | `text-h2` | Bold | 32px | 120% | 2% | H2 |
 | `text-h3` | Medium | 28px | 32px | 0% | H3 |
 | `text-h4` | Medium | 20px | 28px | 0% | H4 |
+| `text-card-title` | Medium | 24px | 32px | 0% | Feature/content card headings (`Web/Card Title` in Figma) |
 | `text-body-lg` | Regular | 20px | 150% | 2% | Lead paragraphs |
 | `text-body` | Regular | 16px | 150% | 2% | Default body |
 | `text-body-sm` | Regular | 14px | 150% | 2% | Captions |

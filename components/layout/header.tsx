@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import { Container } from "@/components/layout/container";
-import { siteConfig } from "@/lib/constants";
+import { MobileNav } from "@/components/layout/mobile-nav";
+import { Button } from "@/components/ui/button";
+import { navLinks, siteConfig } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
@@ -10,12 +12,39 @@ interface HeaderProps {
 
 export function Header({ className }: HeaderProps) {
   return (
-    <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
-      <Container as="nav" aria-label="Main navigation" className="flex h-16 items-center justify-between">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
-          {siteConfig.name}
+    <header className={cn("w-full", className)}>
+      <nav
+        aria-label="Main navigation"
+        className="relative mx-auto flex h-14 w-full max-w-[896px] items-center justify-between"
+      >
+        <Link href="/" className="inline-flex items-center">
+          <Image
+            src="/images/pruvve-images/hero/pruvve-logo.png"
+            alt={siteConfig.name}
+            width={508}
+            height={115}
+            priority
+            className="h-[20px] w-auto md:h-[24px]"
+          />
         </Link>
-      </Container>
+        {/* Figma: link row gap is 47px (off-scale value from the design) */}
+        <ul className="hidden items-center gap-4xl md:flex lg:gap-[47px]">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="text-body text-muted-foreground transition-colors hover:text-foreground lg:text-body-lg"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Button size="xl" className="hidden md:inline-flex">
+          Download App
+        </Button>
+        <MobileNav />
+      </nav>
     </header>
   );
 }
