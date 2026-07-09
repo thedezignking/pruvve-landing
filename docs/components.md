@@ -249,7 +249,7 @@ These will be created during development. Remove from "Planned" and document abo
 | Component | File | Figma Frame | Status |
 |-----------|------|-------------|--------|
 | HeroSection | `hero-section.tsx` | Hero | **Implemented** — gradient card with nav (Header), display headline, CTA, phone mockup + floating cards. Button gained `xl`/`2xl` pill sizes for its buttons; Header now renders the Figma nav (links collapse below `md`). |
-| FeaturesSection | `features-section.tsx` | Features | Planned |
+| FeaturesTrustSection | `features-trust-section.tsx` | Features and trust | **Implemented** — trust row (heading + 3 store rating badges with dividers) and features content (h1 heading + 4 feature cards in 2×2 grid). Cards use exported Figma card images cropped to the visual portion, with real HTML text below. Responsive: single column on mobile, horizontal badges on sm+. |
 | TestimonialsSection | `testimonials-section.tsx` | Testimonials | Planned |
 | CTASection | `cta-section.tsx` | CTA | Planned |
 | FAQSection | `faq-section.tsx` | FAQ | Planned |

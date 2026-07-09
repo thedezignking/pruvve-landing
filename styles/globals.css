@@ -90,10 +90,10 @@
   --text-display--letter-spacing: -0.01em;
   --text-h1: 54px;
   --text-h1--line-height: 1.2;
-  --text-h1--letter-spacing: 0.02em;
+  --text-h1--letter-spacing: -0.01em;
   --text-h2: 32px;
   --text-h2--line-height: 1.2;
-  --text-h2--letter-spacing: 0.02em;
+  --text-h2--letter-spacing: -0.01em;
   --text-h3: 28px;
   --text-h3--line-height: 32px;
   --text-h4: 20px;

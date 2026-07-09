@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- Features and trust section (`components/sections/features-trust-section.tsx`) implemented from the Figma: trust row with "Loved & trusted by 150,000 shoppers" heading, 3 store rating badges (Google Play, App Store, Trustpilot) with star ratings and dividers; features content with section heading and 4 feature cards in a 2×2 grid (576×511 cards with exported Figma images cropped to the visual area, real HTML text below); responsive single-column mobile, 2-column grid at md+
 - Hero section (`components/sections/hero-section.tsx`) implemented from the Figma Hero frame: gradient card, nav, display headline with brand accent, CTA, phone mockup with floating category/product cards; exact desktop geometry with mobile-first responsive behavior
 - Figma nav implemented in `components/layout/header.tsx` (logo, anchor links, Download App pill); links collapse below `md`
 - Button `xl` and `2xl` pill sizes (CVA variants) matching the Figma nav and hero CTA buttons
