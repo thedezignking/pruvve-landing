@@ -10,7 +10,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- _Nothing yet — track upcoming work here before release._
+- Skip-to-content link in the root layout, targeting `#main-content` for keyboard and screen-reader users
+- Global `prefers-reduced-motion` fallback in `styles/globals.css` that disables smooth scrolling and neutralizes CSS animations/transitions
+- `engines.node >= 20` in `package.json` to match the Node version documented in the README
+
+### Changed
+
+- Normalized all `public/images/pruvve-images/` asset and folder names to kebab-case (removed spaces and uppercase) so paths are safe on case-sensitive deploy targets
+
+### Removed
+
+- `jsconfig.json` — redundant with `tsconfig.json` in a TypeScript project and a source of tooling ambiguity
+
+### Fixed
+
+- Map Geist Mono to `--font-mono` instead of `--font-display`, so headings no longer render in a monospace face; `--font-display` falls back to the sans stack until a display font is set from Figma
+- `Section` now composes `<Container>` instead of duplicating its max-width and padding classes, giving a single source of truth for container geometry
+- Remove stray `pruvve/` entry from `.gitignore` that could silently ignore a folder of that name
 
 ---
 
