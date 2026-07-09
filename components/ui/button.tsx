@@ -24,6 +24,12 @@ const buttonVariants = cva(
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
+        /* Figma pill buttons, scaled down mobile-first — nav: 56px at lg
+           (16/24 pad, 16/24 semibold label); hero CTA: 74px at lg
+           (20/32 pad, 24/32 semibold, 10px icon gap) */
+        xl: "h-12 gap-[10px] rounded-full px-xl text-[16px] font-semibold leading-[24px] lg:h-14 lg:px-2xl",
+        "2xl":
+          "h-14 gap-[10px] rounded-full px-2xl text-[18px] font-semibold leading-[24px] [&_svg]:size-[20px] lg:h-[74px] lg:px-4xl lg:text-[24px] lg:leading-[32px] lg:tracking-[0.02em] lg:[&_svg]:size-[24px]",
       },
     },
     defaultVariants: {

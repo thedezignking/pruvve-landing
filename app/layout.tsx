@@ -9,8 +9,10 @@ const fontSans = Geist({
   display: "swap",
 });
 
-const fontDisplay = Geist_Mono({
-  variable: "--font-display",
+// Geist Mono is a monospace face — it belongs on --font-mono, not --font-display.
+// The display token falls back to the sans stack until a display font is set from Figma.
+const fontMono = Geist_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -49,7 +51,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontDisplay.variable} font-sans`}>
+      <body className={`${fontSans.variable} ${fontMono.variable} font-sans`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:shadow-md focus:outline-2 focus:outline-offset-2 focus:outline-ring"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

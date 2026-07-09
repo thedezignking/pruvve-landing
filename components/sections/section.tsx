@@ -1,3 +1,4 @@
+import { Container } from "@/components/layout/container";
 import { cn } from "@/lib/utils";
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
@@ -16,9 +17,7 @@ export function Section({
 }: SectionProps) {
   return (
     <Component id={id} className={cn("py-16 md:py-24", className)} {...props}>
-      <div className={cn("mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8", containerClassName)}>
-        {children}
-      </div>
+      <Container className={containerClassName}>{children}</Container>
     </Component>
   );
 }

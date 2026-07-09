@@ -248,7 +248,7 @@ These will be created during development. Remove from "Planned" and document abo
 
 | Component | File | Figma Frame | Status |
 |-----------|------|-------------|--------|
-| HeroSection | `hero-section.tsx` | Hero | Planned |
+| HeroSection | `hero-section.tsx` | Hero | **Implemented** — gradient card with nav (Header), display headline, CTA, phone mockup + floating cards. Button gained `xl`/`2xl` pill sizes for its buttons; Header now renders the Figma nav (links collapse below `md`). |
 | FeaturesSection | `features-section.tsx` | Features | Planned |
 | TestimonialsSection | `testimonials-section.tsx` | Testimonials | Planned |
 | CTASection | `cta-section.tsx` | CTA | Planned |
