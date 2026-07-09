@@ -1,14 +1,22 @@
+import { Header } from "@/components/layout/header";
+import { FeaturesTrustSection } from "@/components/sections/features-trust-section";
 import { HeroSection } from "@/components/sections/hero-section";
 
 export default function HomePage() {
   return (
-    /* Figma "Landing page" frame padding (10px top / 24px sides); the hero
-       card fills the viewport width fluidly rather than capping at 1436px */
-    <main
-      id="main-content"
-      className="min-h-screen px-m pt-[10px] md:px-2xl"
-    >
-      <HeroSection />
-    </main>
+    <>
+      <div className="sticky top-0 z-50 bg-background/95 px-m backdrop-blur-sm md:px-2xl">
+        <div className="py-m">
+          <Header />
+        </div>
+      </div>
+      <main
+        id="main-content"
+        className="min-h-screen px-m md:px-2xl"
+      >
+        <HeroSection />
+        <FeaturesTrustSection />
+      </main>
+    </>
   );
 }

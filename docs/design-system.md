@@ -116,8 +116,8 @@ Utilities: `text-success`, `bg-error`, etc. (base). Full 50–900 ramps exist in
 | Utility | Weight | Size | Line-height | Tracking | Usage |
 |---------|--------|------|-------------|----------|-------|
 | `text-display` | Medium | 74px | 114% | -1% | Hero headline |
-| `text-h1` | Medium | 54px | 120% | 2% | Section hero |
-| `text-h2` | Bold | 32px | 120% | 2% | H2 |
+| `text-h1` | Medium | 54px | 120% | -1% | Section hero |
+| `text-h2` | Bold | 32px | 120% | -1% | H2 |
 | `text-h3` | Medium | 28px | 32px | 0% | H3 |
 | `text-h4` | Medium | 20px | 28px | 0% | H4 |
 | `text-card-title` | Medium | 24px | 32px | 0% | Feature/content card headings (`Web/Card Title` in Figma) |
