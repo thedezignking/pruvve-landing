@@ -24,7 +24,7 @@ export function Header({ className }: HeaderProps) {
             width={508}
             height={115}
             priority
-            className="h-[20px] w-auto md:h-[24px]"
+            className="h-[19px] w-auto md:h-[23px] lg:h-[27px]"
           />
         </Link>
         {/* Figma: link row gap is 47px (off-scale value from the design) */}

@@ -132,7 +132,7 @@ export function FeaturesTrustSection() {
     <section
       id="features"
       aria-labelledby="features-heading"
-      className="flex flex-col items-center pt-7xl pb-[80px] lg:pt-[84px] lg:pb-[150px]"
+      className="flex flex-col items-center px-l pt-7xl pb-[80px] md:px-2xl lg:pt-[84px] lg:pb-[150px]"
     >
       {/* Trust row */}
       <div className="flex flex-col items-center gap-5xl">
@@ -159,11 +159,11 @@ export function FeaturesTrustSection() {
         <div className="flex max-w-[900px] flex-col items-center gap-l text-center">
           <h2
             id="features-heading"
-            className="text-h3 font-medium sm:text-h2 lg:text-h1"
+            className="text-h1 font-medium"
           >
             Everything you need for smarter gadget shopping
           </h2>
-          <p className="text-[18px] leading-[24px] tracking-[0.02em] text-muted-foreground">
+          <p className="text-body-lg text-muted-foreground">
             Discover, compare, and buy gadgets without the confusion.
           </p>
         </div>
