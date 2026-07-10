@@ -84,23 +84,23 @@
   --spacing-6xl: 40px;
   --spacing-7xl: 48px;
 
-  /* ---- Type scale (Web/* text styles). Weights live in design-system.md. ---- */
-  --text-display: 74px;
+  /* ---- Type scale (responsive via CSS vars — mobile values in :root, md/lg overrides below) ---- */
+  --text-display: var(--fs-display);
   --text-display--line-height: 1.14;
   --text-display--letter-spacing: -0.01em;
-  --text-h1: 54px;
+  --text-h1: var(--fs-h1);
   --text-h1--line-height: 1.2;
   --text-h1--letter-spacing: -0.01em;
-  --text-h2: 32px;
+  --text-h2: var(--fs-h2);
   --text-h2--line-height: 1.2;
   --text-h2--letter-spacing: -0.01em;
-  --text-h3: 28px;
-  --text-h3--line-height: 32px;
-  --text-h4: 20px;
-  --text-h4--line-height: 28px;
-  --text-card-title: 24px;
-  --text-card-title--line-height: 32px;
-  --text-body-lg: 20px;
+  --text-h3: var(--fs-h3);
+  --text-h3--line-height: var(--lh-h3);
+  --text-h4: var(--fs-h4);
+  --text-h4--line-height: var(--lh-h4);
+  --text-card-title: var(--fs-card-title);
+  --text-card-title--line-height: var(--lh-card-title);
+  --text-body-lg: var(--fs-body-lg);
   --text-body-lg--line-height: 1.5;
   --text-body-lg--letter-spacing: 0.02em;
   --text-body: 16px;
@@ -227,6 +227,45 @@
   --border: var(--bg-subtle);
   --input: var(--bg-subtle);
   --ring: var(--primary-base);
+
+  /* ---- Responsive typography (mobile-first) ---- */
+  --fs-display: 44px;
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 22px;
+  --lh-h3: 28px;
+  --fs-h4: 18px;
+  --lh-h4: 24px;
+  --fs-card-title: 20px;
+  --lh-card-title: 28px;
+  --fs-body-lg: 18px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-display: 56px;
+    --fs-h1: 40px;
+    --fs-h2: 28px;
+    --fs-h3: 24px;
+    --lh-h3: 30px;
+    --fs-card-title: 22px;
+    --lh-card-title: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fs-display: 74px;
+    --fs-h1: 54px;
+    --fs-h2: 32px;
+    --fs-h3: 28px;
+    --lh-h3: 32px;
+    --fs-h4: 20px;
+    --lh-h4: 28px;
+    --fs-card-title: 24px;
+    --lh-card-title: 32px;
+    --fs-body-lg: 20px;
+  }
 }
 
 @layer base {
